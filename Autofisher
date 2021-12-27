@@ -1,0 +1,23 @@
+
+import time
+import keyboard as keyboard
+import pyautogui
+
+color = (2,164,170)
+pyautogui.FAILSAFE = False
+
+while True:
+s = pyautogui.screenshot()
+for x in range(s.width):
+for y in range(s.height):
+if s.getpixel((x, y)) == color:
+pyautogui.click(x, y) # do something here
+time.sleep(0.2)
+pyautogui.click(x, y) # do something here
+time.sleep(0.2)
+pyautogui.click(x, y, button=pyautogui.RIGHT)
+print("found")
+
+print(".")
+if keyboard.read_key("b"):
+break
